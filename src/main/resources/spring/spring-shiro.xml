@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--web.xml中shiro的filter对应的bean-->
+    <!-- Shiro 的Web过滤器 -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <!--loginUrl认证提交地址，如果没有认证将会请求此地址进行认证，请求此地址将由formAuthenticationFilter进行表单认证-->
+        <property name="loginUrl" value="/login"/>
+        <!-- 过虑器链定义，从上向下顺序执行，一般将/**放在最下边 -->
+        <property name="filterChainDefinitions">
+            <value>
+                <!--对静态资源设置匿名访问-->
+                /images/**=anon
+                /js/**=anon
+                /style/**=anon
+                <!--/**=anon 表示所有的url都可以匿名访问，anon是shiro中一个过滤器的简写，关于shiro中的过滤器介绍见-->
+                /**=anon
+            </value>
+        </property>
+    </bean>
+
+    <!--securityManage-->
+    <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="customRealm"/>
+    </bean>
+
+    <!--自定义realm-->
+    <bean id="customRealm" class="shiro.shirorealm.CustomRealm">
+        <!--将凭证匹配器设置到我们自定义realm的配置中-->
+        <property name="credentialsMatcher" ref="credentialsMatcher"/>
+    </bean>
+
+    <!--数据库中存储到的md5的散列值，在realm中需要设置数据库中的散列值它使用散列算法及散列次数，
+  让shiro进行散列对比时和原始数据库中的散列值使用的算法一致-->
+    <!-- (密码)凭证匹配器 -->
+    <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+        <property name="hashAlgorithmName" value="md5" />
+        <property name="hashIterations" value="1" />
+    </bean>
+
+</beans>
