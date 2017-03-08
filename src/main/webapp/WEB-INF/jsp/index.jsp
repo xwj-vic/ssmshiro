@@ -2,9 +2,8 @@
 <html>
     <head>
         <title>Shiro 测试项目首页</title>
-
     </head>
     <body>
-       <h1>这是首页</h1>
+       <jsp:include page="login.jsp"/>
     </body>
 </html>

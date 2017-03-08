@@ -11,6 +11,9 @@
     <title>成功登录</title>
 </head>
 <body>
-<h1>用户名：${username}</h1>
+    <div align="center">
+        <h1>用户名：${username}</h1>
+    </div>
+
 </body>
 </html>

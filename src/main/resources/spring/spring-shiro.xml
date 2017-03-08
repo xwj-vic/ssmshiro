@@ -39,7 +39,6 @@
     <!-- (密码)凭证匹配器 -->
     <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
         <property name="hashAlgorithmName" value="md5" />
-        <property name="hashIterations" value="1" />
     </bean>
 
 </beans>

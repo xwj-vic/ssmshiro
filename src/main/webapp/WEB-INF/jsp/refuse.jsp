@@ -11,8 +11,9 @@
     <title>认证失败</title>
 </head>
 <body>
-<h1>认证失败的异常信息:</h1><br>
-${exception}
-
+    <div align="center">
+        <h1>认证失败的异常信息:</h1><br>
+        ${exception}
+    </div>
 </body>
 </html>
