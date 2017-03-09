@@ -28,6 +28,6 @@
 
     <!--4:扫描web相关的controller-->
     <context:component-scan base-package="web"/>
-
+    <context:component-scan base-package="kcaptcha"/>
 
 </beans>

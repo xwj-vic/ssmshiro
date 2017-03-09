@@ -24,6 +24,7 @@ public class LoginController {
         String verifyCode=request.getParameter("verifyCode").toUpperCase();
         String username=request.getParameter("username");
         String password=request.getParameter("password");
+        //判断验证码输入是否正确
         if(verifyCode.equals(request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY))){
             if((username!=null && password!=null)){
                 UsernamePasswordToken token=new UsernamePasswordToken(username,password);

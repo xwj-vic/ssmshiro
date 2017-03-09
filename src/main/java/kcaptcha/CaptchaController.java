@@ -1,4 +1,4 @@
-package web;
+package kcaptcha;
 
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;

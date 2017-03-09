@@ -1,5 +1,5 @@
 import org.junit.Test;
-import util.MD5Util;
+import util.Encryption.MD5Util;
 
 /**
  * Created by xuweijie on 2017/3/7.
