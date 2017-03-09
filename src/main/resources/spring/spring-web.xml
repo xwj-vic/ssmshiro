@@ -17,7 +17,10 @@
         2).允许使用 "/" 做整体映射
     -->
     <mvc:default-servlet-handler/>
-    <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <mvc:resources mapping="/resources/**" location="resources/"/>
+    <mvc:resources mapping="/images/**" location="images"/>
+    <mvc:resources mapping="/js/**" location="js/"/>
+    <mvc:resources mapping="/styles/**" location="styles/"/>
 
     <!--3：配置JSP 显示ViewResolver-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
