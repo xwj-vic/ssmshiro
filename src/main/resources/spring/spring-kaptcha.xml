@@ -9,7 +9,7 @@
                 <constructor-arg>
                     <props>
                         <!-- 验证码宽度 -->
-                        <prop key="kaptcha.image.width">110</prop>
+                        <prop key="kaptcha.image.width">240</prop>
                         <!-- 验证码高度 -->
                         <prop key="kaptcha.image.height">50</prop>
                         <!-- 生成验证码内容范围 -->
