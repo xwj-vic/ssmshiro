@@ -12,6 +12,7 @@
 </head>
 <body>
     <div align="center">
+        <h1>抱歉，您的登录认证失败</h1><br>
         <h1>认证失败的异常信息:</h1><br>
         ${exception}
     </div>
