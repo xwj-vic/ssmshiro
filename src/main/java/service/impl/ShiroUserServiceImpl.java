@@ -15,7 +15,7 @@ public class ShiroUserServiceImpl implements ShiroUserService {
     @Autowired
     private ShiroUserDao userDao;
 
-    public User queryUser(String username) {
+    public User queryUser(String username){
         return userDao.queryByName(username);
     }
 }

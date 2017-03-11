@@ -15,17 +15,26 @@ import service.ShiroUserService;
 /**
  * Created by xuweijie on 2017/3/3.
  */
-public class CustomRealm extends AuthorizingRealm {
+public class CustomRealm extends AuthorizingRealm{
 
     @Autowired
     private ShiroUserService userService;
+
+    //设置realm的名称
+    @Override
+    public void setName(String name) {
+        super.setName("customRealm");
+    }
 
     //登录认证
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
 
         String username= (String) authenticationToken.getPrincipal();
-        User user=userService.queryUser(username);
-        if(user==null){
+        User user= null;
+
+        user = userService.queryUser(username);
+
+        if(userService==null){
             return null;
         }
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(username,user.getPassword(),

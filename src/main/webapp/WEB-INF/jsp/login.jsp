@@ -2,19 +2,22 @@
 <html>
 <head>
     <title>用户登录</title>
+    <link rel="stylesheet" type="text/css" href="styles/login.css">
+    <link rel="stylesheet" type="text/css" href="styles/fontshiny.css" >
+    <link rel="stylesheet" type="text/css" href="styles/animate.min.css" >
+
+</head>
+
+<body style="background-color: #50a3a2">
+    <script type="text/javascript" color="255,255,255" opacity='0.7' zIndex="-2" count="200" src="js/canvas-nest.js"></script>
+
     <script type="text/javascript">
         function changeVerifyCode() {
             var time=new Date().getTime();
             document.getElementById("kaptchaImage").src="/kaptcha?d="+time;//为了不让验证码缓存，为了安全起见，需要次次都刷新
         }
     </script>
-    <link  rel="stylesheet" type="text/css" href="styles/login.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/fontshiny.css">
-    <link rel="stylesheet" type="text/css" href="styles/animate.min.css">
-</head>
 
-<body style="background-color: #50a3a2">
-<script type="text/javascript" color="255,255,255" opacity='0.7' zIndex="-2" count="200" src="js/canvas-nest.js"></script>
     <div class="container">
         <div class="animated bounceIn">
             <span class="intro">伟杰后台系统登录</span>
