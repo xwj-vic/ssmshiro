@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/ftl"/>
+        <property name="freemarkerSettings">
+            <props>
+                <!--设置标签类型,[]和<>，[]这种解析要快-->
+                <prop key="tag_syntax">auto_detect</prop>
+                <!--模板更新时间间隔-->
+                <prop key="template_update_delay">10</prop>
+                <prop key="locale">UTF-8</prop>
+                <prop key="default_encoding">UTF-8</prop>
+                <prop key="boolean_format">true,false</prop>
+                <prop key="datetime_format">yyyy-MM-dd HH:MM:SS</prop><!-- 时间格式化 -->
+                <prop key="date_format">yyyy-MM-dd</prop>
+                <prop key="number_format">#.##</prop>
+                <!--去掉多余空格-->
+                <prop key="whitespace_stripping">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- freemarker视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="order" value="1"/>
+        <property name="suffix" value=".ftl" />
+        <property name="contentType" value="text/html;charset=UTF-8" />
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+        <property name="allowSessionOverride" value="true" />
+        <property name="allowRequestOverride" value="true" />
+        <property name="exposeSpringMacroHelpers" value="false" />
+        <property name="exposeRequestAttributes" value="true" />
+        <property name="exposeSessionAttributes" value="true" />
+        <!-- 此变量值为pageContext.request, 页面使用方法：request.contextPath -->
+        <property name="requestContextAttribute" value="request" />
+    </bean>
+
+</beans>

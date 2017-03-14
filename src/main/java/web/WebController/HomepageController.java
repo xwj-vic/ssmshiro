@@ -1,4 +1,4 @@
-package web;
+package web.WebController;
 
 import entity.User;
 import org.apache.shiro.SecurityUtils;

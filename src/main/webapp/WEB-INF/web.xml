@@ -18,6 +18,10 @@
     <error-code>404</error-code>
     <location>/WEB-INF/jsp/errorpage/404.jsp</location>
   </error-page>
+  <error-page>
+    <error-code>405</error-code>
+    <location>/WEB-INF/jsp/errorpage/405.jsp</location>
+  </error-page>
 
   <!--配置DispatcherServlet-->
   <servlet>
