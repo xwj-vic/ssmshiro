@@ -5,7 +5,13 @@
     <title>freemarker页面</title>
 </head>
 <body>
-Hello ${name}
-
+Hello ${name}  <!--ftl的插值-->
+<#setting number_format="currency"/>
+<#assign answer=46/>
+${answer}
+${answer?string}
+${answer?string.number}
+${answer?string.currency}
+${answer?string.percent}
 </body>
 </html>
