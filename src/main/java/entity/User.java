@@ -1,9 +1,14 @@
 package entity;
 
+import com.baomidou.mybatisplus.annotations.TableName;
+
+import java.io.Serializable;
+
 /**
  * Created by xuweijie on 2017/3/7.
  */
-public class User {
+@TableName("User")
+public class User implements Serializable {
     private int id;
     private String username;
     private String password;
