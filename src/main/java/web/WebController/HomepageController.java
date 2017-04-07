@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by xuweijie on 2017/3/11.
  */
 @Controller
-public class HomepageController {
+@RequestMapping("/home")
+public class HomepageController{
 
-    @RequestMapping(value = "/homepage")
+    @RequestMapping(value = "homepage")
     public String loginsuccess( Model model) throws Exception{
         Subject subject= SecurityUtils.getSubject();
         String username= (String) subject.getPrincipal();
